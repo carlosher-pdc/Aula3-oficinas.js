@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo de perguntas</title>
+</head>
+<body>
+    
+<h1>Quizz de tecnologia</h1>
 
+<p>benvindo ao nosso Quizz de tecnologia</p>
+<p id="perguntas">Clic em iniciar</p>
+
+<button onclick="comecar()"> Iniciar </button>
+
+<div id="botoes"></div>
+<h2 id="respostas"></h2>
+
+<script>
+
+let pontos=0;
+
+function comecar(){
+    document.getElementById("perguntas").innerHTML="P1; O que é Java Script?"
+
+    document.getElementById("botoes").innerHTML=`
+    <button onclick= "resposta1('A')">É uma marca de salgadinho</button>
+    <button onclick= "resposta1('B')">É uma variavel do pynton</button>
+    <button onclick= "resposta1('C')">É uma linguajem de prograação</button>
+    <button onclick= "resposta1('D')">É uma forma geometrica de 10 lados</button>
+    `;
+}
+
+function resposta1(){
+   if (opcao == 'C'){
+      pontos++;
+      alert("CORRETO!!")
+   } else{
+         alert("ERROU")
+   }
+}
+
+
+</script>
+
+</body>
+</html>
