@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jogo de perguntas</title>
-</head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <body>
     
 <h1>Quizz de tecnologia</h1>
@@ -18,7 +21,6 @@
 <h2 id="respostas"></h2>
 
 <button onclick="comecar2()">proxima pergunta</button>
-
 <script>
 
 let pontos=0;
@@ -36,6 +38,8 @@ function comecar(){
     `;
 } 
 function comecar2(){
+    document.body.style.backgroundColor= rgb(148, 230, 230);
+    respostas.textContent="QUERO VER SE ACERTA ESSA AQUI!!!";
     document.getElementById("perguntas").innerHTML = "Questão 2. Qual desses é uma linguagem de programação?"
 
     document.getElementById("botoes").innerHTML = `
@@ -67,11 +71,11 @@ function resposta1(opcao){
    }
 }
 function resposta2(opcao){
-    document.body.style.backgroundColor= "White"
-    document.textContent=" ";
+    document.body.style.backgroundColor=rgb(148, 230, 230);
+    document.textContent="...";
    if (opcao == 'B'){
       pontos++;
-      respostas.textContent="MÃO VALE USAR O GOOGLE"
+      respostas.textContent="NÃO VALE USAR O GOOGLE"
       document.body.style.backgroundColor = "green"
    } 
    if (opcao == 'A'){
