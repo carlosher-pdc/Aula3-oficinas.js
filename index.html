@@ -12,33 +12,81 @@
 <p>benvindo ao nosso Quizz de tecnologia</p>
 <p id="perguntas">Clic em iniciar</p>
 
-<button onclick="comecar()"> Iniciar </button>
+<button id="iniciar1"onclick="comecar()"> iniciar </button>
 
 <div id="botoes"></div>
 <h2 id="respostas"></h2>
 
+<button onclick="comecar2()">proxima pergunta</button>
+
 <script>
 
 let pontos=0;
-
+let respostas=document.getElementById("respostas")
+    
 function comecar(){
-    document.getElementById("perguntas").innerHTML="P1; O que é Java Script?"
+    document.getElementById("perguntas").innerHTML = "Questão 1. O que é Java Script?"
 
-    document.getElementById("botoes").innerHTML=`
-    <button onclick= "resposta1('A')">É uma marca de salgadinho</button>
-    <button onclick= "resposta1('B')">É uma variavel do pynton</button>
-    <button onclick= "resposta1('C')">É uma linguajem de prograação</button>
-    <button onclick= "resposta1('D')">É uma forma geometrica de 10 lados</button>
+    document.getElementById("botoes").innerHTML = `
+
+    <button onclick="resposta1('A')"> É uma marca de salgadinho </button>
+    <button onclick="resposta1('B')"> Uma variavel no pyento </button>
+    <button onclick="resposta1('C')"> Uma Linguagem de Programação </button>
+    <button onclick="resposta1('D')"> Uma forma geometrica de 10 lados </button>
+    `;
+} 
+function comecar2(){
+    document.getElementById("perguntas").innerHTML = "Questão 2. Qual desses é uma linguagem de programação?"
+
+    document.getElementById("botoes").innerHTML = `
+
+    <button onclick="resposta2('A')"> Portugues </button>
+    <button onclick="resposta2('B')"> pyento </button>
+    <button onclick="resposta2('C')"> redestone </button>
+    <button onclick="resposta2('D')"> doritos </button>
     `;
 }
 
-function resposta1(){
+function resposta1(opcao){
    if (opcao == 'C'){
       pontos++;
-      alert("CORRETO!!")
-   } else{
-         alert("ERROU")
+      respostas.textContent="FOI SORTE!!"
+      document.body.style.backgroundColor = "green"
+   } 
+   if (opcao == 'A'){
+        respostas.textContent="esta com fome ou o que?"
+        document.body.style.backgroundColor = "red" 
    }
+   if (opcao == 'B'){
+        respostas.textContent="ERROU!"
+        document.body.style.backgroundColor = "red"
+   }
+   if (opcao == 'D'){
+        respostas.textContent="Esse é um quizz de programação não geometria"
+        document.body.style.backgroundColor = "red"
+   }
+}
+function resposta2(opcao){
+    document.body.style.backgroundColor= "White"
+    document.textContent=" ";
+   if (opcao == 'B'){
+      pontos++;
+      respostas.textContent="MÃO VALE USAR O GOOGLE"
+      document.body.style.backgroundColor = "green"
+   } 
+   if (opcao == 'A'){
+        respostas.textContent="LINGUAGEM ERRADA"
+        document.body.style.backgroundColor = "red" 
+   }
+   if (opcao == 'C'){
+        respostas.textContent="ESTA JOGANDO MUITO MINE!"
+        document.body.style.backgroundColor = "red"
+   }
+   if (opcao == 'D'){
+        respostas.textContent="AINDA ESTA COM FOME"
+        document.body.style.backgroundColor = "red"
+   }
+
 }
 
 
@@ -46,3 +94,4 @@ function resposta1(){
 
 </body>
 </html>
+
